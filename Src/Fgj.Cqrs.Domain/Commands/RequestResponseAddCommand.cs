@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class RequestResponseAdicionarCommand : RequestCommand, IRequest<ResponseCommand>
+    public class RequestResponseAddCommand : RequestCommand, IRequest<ResponseCommand>
     {
-        public DateTime Data { get; }
+        public DateTime DateTime { get; }
 
         public string Request { get; }
 
@@ -14,31 +14,31 @@ namespace Fgj.Cqrs.Domain.Commands
 
         public string EndPoint { get; }
 
-        public RequestResponseAdicionarCommand(DateTime data, string request, string response, string endPoint)
+        public RequestResponseAddCommand(DateTime dataTime, string request, string response, string endPoint)
         {
-            Data = data;
+            DateTime = dataTime;
             Request = request;
             Response = response;
             EndPoint = endPoint;
         }
 
-        public override void Validar()
+        public override void Validate()
         {
-            Erros = new List<string>(0);
+            Errors = new List<string>(0);
 
             if (string.IsNullOrEmpty(Request))
             {
-                Erros.Add("Request é obrigatório");
+                Errors.Add("Request é obrigatório");
             }
 
             if (string.IsNullOrEmpty(Response))
             {
-                Erros.Add("Response é obrigatório");
+                Errors.Add("Response é obrigatório");
             }
 
             if (string.IsNullOrEmpty(EndPoint))
             {
-                Erros.Add("EndPoint é obrigatório");
+                Errors.Add("EndPoint é obrigatório");
             }
         }
     }

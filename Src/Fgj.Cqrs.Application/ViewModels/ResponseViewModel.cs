@@ -2,14 +2,14 @@
 {
     public class ResponseViewModel
     {
-        public bool Sucesso { get; private set; }
+        public bool Success { get; private set; }
 
-        public object Objeto { get; private set; }
+        public object Object { get; private set; }
 
-        public ResponseViewModel(bool sucesso, object objeto)
+        public ResponseViewModel(bool success, object obj)
         {
-            Sucesso = sucesso;
-            Objeto = objeto;
+            Success = success;
+            Object = obj;
         }
     }
 }

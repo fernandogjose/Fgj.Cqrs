@@ -25,7 +25,7 @@ namespace Fgj.Cqrs.Api.Middlewares
                         // Tratar o response
                         ResponseViewModel response = new ResponseViewModel(false, new List<string>
                         {
-                            { $"Erro inesperado no servidor - {contextFeature.Error.Message}" }
+                            { $"Server Error - {contextFeature.Error.Message}" }
                         });
 
                         await context.Response.WriteAsync(JsonConvert.SerializeObject(response)).ConfigureAwait(true);

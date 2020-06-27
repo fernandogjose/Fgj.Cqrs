@@ -7,11 +7,13 @@
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.5" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Fgj.Cqrs.Application\Fgj.Cqrs.Application.csproj" />
     <ProjectReference Include="..\Fgj.Cqrs.MongoDb\Fgj.Cqrs.MongoDb.csproj" />
+    <ProjectReference Include="..\Fgj.Cqrs.SqlServer\Fgj.Cqrs.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

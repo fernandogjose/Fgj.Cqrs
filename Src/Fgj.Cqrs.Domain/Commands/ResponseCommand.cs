@@ -2,14 +2,14 @@
 {
     public class ResponseCommand
     {
-        public bool Sucesso { get; }
+        public bool Success { get; }
 
-        public object Objeto { get; }
+        public object Object { get; }
 
-        public ResponseCommand(bool sucesso, object objeto)
+        public ResponseCommand(bool success, object obj)
         {
-            Sucesso = sucesso;
-            Objeto = objeto;
+            Success = success;
+            Object = obj;
         }
     }
 }

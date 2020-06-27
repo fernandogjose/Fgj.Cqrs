@@ -16,12 +16,12 @@ namespace Fgj.Cqrs.MongoDb.Repositories
             _mongoDbHelper = mongoDbHelper;
         }
 
-        public async Task AdicionarAsync(RequestResponseAdicionarCommand request)
+        public async Task AddAsync(RequestResponseAddCommand request)
         {
             var collection = _mongoDbHelper.MongoDatabase.GetCollection<BsonDocument>("RequestResponse");
             var bsonDocumentRequest = new BsonDocument(
                 new Dictionary<string, string> {
-                    { "Data", request.Data.ToString("dd/MM/yyyy HH:mm") },
+                    { "Data", request.DateTime.ToString("dd/MM/yyyy HH:mm") },
                     { "Request", request.Request },
                     { "Response", request.Response },
                     { "EndPoint", request.EndPoint }

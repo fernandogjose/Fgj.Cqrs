@@ -4,13 +4,13 @@ namespace Fgj.Cqrs.Domain.Commands
 {
     public abstract class RequestCommand
     {
-        public List<string> Erros { get; protected set; }
+        public List<string> Errors { get; protected set; }
 
-        public abstract void Validar();
+        public abstract void Validate();
 
-        public bool TemErro()
+        public bool IsValid()
         {
-            return Erros?.Count > 0;
+            return Errors == null || Errors.Count == 0;
         }
     }
 }

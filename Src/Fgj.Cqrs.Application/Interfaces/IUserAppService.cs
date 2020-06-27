@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace Fgj.Cqrs.Application.Interfaces
 {
-    public interface IRequestResponseAppService
+    public interface IUserAppService
     {
-        Task AddAsync(RequestResponseAddRequestViewModel request);
+        Task<ResponseViewModel> AddAsync(UserAddRequestViewModel request);
     }
 }

@@ -10,7 +10,7 @@ namespace Fgj.Cqrs.MongoDb.Helpers
 
         public MongoDbHelper()
         {
-            _connectionString = Environment.GetEnvironmentVariable("MongoDbConnection");
+            _connectionString = Environment.GetEnvironmentVariable("FGJ-CQRS-MONGODB-CONNECTION");
             CreateMongoDatabase();
         }
 

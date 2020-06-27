@@ -78,7 +78,7 @@ namespace Fgj.Cqrs.Api.Middlewares
 
             // Verificar se teve algum erro de negócio e volta StatusCode diferente de 200
             ResponseViewModel responseViewModel = JsonConvert.DeserializeObject<ResponseViewModel>(Response);
-            if (responseViewModel?.Sucesso == false)
+            if (responseViewModel?.Success == false)
             {
                 response.StatusCode = response.StatusCode == 500 ? 500 : 400;
             }
@@ -90,10 +90,10 @@ namespace Fgj.Cqrs.Api.Middlewares
         {
             try
             {
-                RequestResponseAdicionarRequestViewModel request = new RequestResponseAdicionarRequestViewModel(DateTime.Now, Request, Response, EndPoint);
-                await _requestResponseAppService.AdicionarAsync(request).ConfigureAwait(false);
+                RequestResponseAddRequestViewModel request = new RequestResponseAddRequestViewModel(DateTime.Now, Request, Response, EndPoint);
+                await _requestResponseAppService.AddAsync(request).ConfigureAwait(false);
             }
-            catch (Exception ex) { }
+            catch { }
         }
     }
 }
