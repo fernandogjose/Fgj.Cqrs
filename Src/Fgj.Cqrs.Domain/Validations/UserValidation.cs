@@ -1,10 +1,11 @@
 ﻿using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
+using Fgj.Cqrs.Domain.Interfaces.Validations;
 using Fgj.Cqrs.Domain.Queries;
 using System;
 
 namespace Fgj.Cqrs.Domain.Validations
 {
-    public class UserValidation
+    public class UserValidation : IUserValidation
     {
         private readonly IUserSqlServerRepository _userSqlServerRepository;
 

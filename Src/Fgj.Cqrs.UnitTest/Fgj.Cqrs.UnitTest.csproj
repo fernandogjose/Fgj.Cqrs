@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="29.0.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Moq" Version="4.14.4" />
     <PackageReference Include="Roslynator.Analyzers" Version="2.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,8 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="3-Domain\Commands\" />
-    <Folder Include="3-Domain\Handlers\" />
+    <ProjectReference Include="..\Fgj.Cqrs.Domain\Fgj.Cqrs.Domain.csproj" />
   </ItemGroup>
 
 </Project>

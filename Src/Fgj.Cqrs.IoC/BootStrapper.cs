@@ -3,6 +3,7 @@ using Fgj.Cqrs.Application.Interfaces;
 using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Interfaces.MongoDbRepositories;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
+using Fgj.Cqrs.Domain.Interfaces.Validations;
 using Fgj.Cqrs.Domain.Pipelines;
 using Fgj.Cqrs.Domain.Validations;
 using Fgj.Cqrs.MongoDb.Helpers;
@@ -42,7 +43,7 @@ namespace Fgj.Cqrs.IoC
             services.AddMediatR(typeof(ProfileAddCommand).GetTypeInfo().Assembly);
 
             // Validations
-            services.AddTransient<UserValidation>();
+            services.AddTransient<IUserValidation, UserValidation>();
         }
     }
 }

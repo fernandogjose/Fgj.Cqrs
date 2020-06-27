@@ -22,7 +22,7 @@ namespace Fgj.Cqrs.Domain.Commands
         {
             Errors = new List<string>(0);
 
-            if (IdProfile == 0)
+            if (IdProfile <= 0)
             {
                 Errors.Add("Profile is required");
             }

@@ -1,5 +1,6 @@
 ﻿using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
+using Fgj.Cqrs.Domain.Interfaces.Validations;
 using Fgj.Cqrs.Domain.Validations;
 using MediatR;
 using System;
@@ -11,9 +12,9 @@ namespace Fgj.Cqrs.Domain.Handlers
     public class UserAddCommandHandler : IRequestHandler<UserAddCommand, ResponseCommand>
     {
         private readonly IUserSqlServerRepository _userSqlServerRepository;
-        private readonly UserValidation _userValidation;
+        private readonly IUserValidation _userValidation;
 
-        public UserAddCommandHandler(IUserSqlServerRepository userSqlServerRepository, UserValidation userValidation)
+        public UserAddCommandHandler(IUserSqlServerRepository userSqlServerRepository, IUserValidation userValidation)
         {
             _userSqlServerRepository = userSqlServerRepository;
             _userValidation = userValidation;
