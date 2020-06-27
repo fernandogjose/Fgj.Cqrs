@@ -16,6 +16,7 @@ namespace Fgj.Cqrs.Api.Middlewares
         private string Request;
         private string Response;
         private string EndPoint;
+        private string Method;
 
         public RequestResponseMiddleware(RequestDelegate next, IRequestResponseAppService requestResponseAppService)
         {
@@ -32,6 +33,7 @@ namespace Fgj.Cqrs.Api.Middlewares
             {
                 Request = await reader.ReadToEndAsync();
                 EndPoint = request.Path.ToString();
+                Method = request.Method;
                 request.Body.Position = 0;
             }
         }
@@ -90,7 +92,7 @@ namespace Fgj.Cqrs.Api.Middlewares
         {
             try
             {
-                RequestResponseAddRequestViewModel request = new RequestResponseAddRequestViewModel(DateTime.Now, Request, Response, EndPoint);
+                RequestResponseAddRequestViewModel request = new RequestResponseAddRequestViewModel(DateTime.Now, Request, Response, EndPoint, Method);
                 await _requestResponseAppService.AddAsync(request).ConfigureAwait(false);
             }
             catch { }

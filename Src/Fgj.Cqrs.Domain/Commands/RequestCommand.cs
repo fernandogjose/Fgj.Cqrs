@@ -12,5 +12,11 @@ namespace Fgj.Cqrs.Domain.Commands
         {
             return Errors == null || Errors.Count == 0;
         }
+
+        public void AddError(string error)
+        {
+            if (Errors == null) Errors = new List<string>(0);
+            Errors.Add(error);
+        }
     }
 }

@@ -12,12 +12,15 @@ namespace Fgj.Cqrs.Application.ViewModels
 
         public string EndPoint { get; }
 
-        public RequestResponseAddRequestViewModel(DateTime dataTime, string request, string response, string endpoint)
+        public string Method { get; }
+
+        public RequestResponseAddRequestViewModel(DateTime dataTime, string request, string response, string endpoint, string method)
         {
             DateTime = dataTime;
             Request = request;
             Response = response;
             EndPoint = endpoint;
+            Method = method;
         }
     }
 }

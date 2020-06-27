@@ -19,7 +19,7 @@ namespace Fgj.Cqrs.Application.AppServices
 
         public async Task AddAsync(RequestResponseAddRequestViewModel request)
         {
-            RequestResponseAddCommand command = new RequestResponseAddCommand(DateTime.Now, request.Request, request.Response, request.EndPoint);
+            RequestResponseAddCommand command = new RequestResponseAddCommand(DateTime.Now, request.Request, request.Response, request.EndPoint, request.Method);
             await _mediator.Send(command, CancellationToken.None).ConfigureAwait(false);
         }
     }

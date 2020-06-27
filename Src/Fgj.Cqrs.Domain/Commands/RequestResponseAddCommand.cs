@@ -14,12 +14,15 @@ namespace Fgj.Cqrs.Domain.Commands
 
         public string EndPoint { get; }
 
-        public RequestResponseAddCommand(DateTime dataTime, string request, string response, string endPoint)
+        public string Method { get; }
+
+        public RequestResponseAddCommand(DateTime dataTime, string request, string response, string endPoint, string method)
         {
             DateTime = dataTime;
             Request = request;
             Response = response;
             EndPoint = endPoint;
+            Method = method;
         }
 
         public override void Validate()
@@ -28,17 +31,22 @@ namespace Fgj.Cqrs.Domain.Commands
 
             if (string.IsNullOrEmpty(Request))
             {
-                Errors.Add("Request é obrigatório");
+                Errors.Add("Request is required");
             }
 
             if (string.IsNullOrEmpty(Response))
             {
-                Errors.Add("Response é obrigatório");
+                Errors.Add("Response is required");
             }
 
             if (string.IsNullOrEmpty(EndPoint))
             {
-                Errors.Add("EndPoint é obrigatório");
+                Errors.Add("EndPoint is required");
+            }
+
+            if (string.IsNullOrEmpty(Method))
+            {
+                Errors.Add("Method is required");
             }
         }
     }

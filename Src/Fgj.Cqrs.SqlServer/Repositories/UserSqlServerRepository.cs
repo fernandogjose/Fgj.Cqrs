@@ -1,6 +1,8 @@
 ﻿using Dapper;
 using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
+using Fgj.Cqrs.Domain.Queries;
+using System.Collections.Generic;
 
 namespace Fgj.Cqrs.SqlServer.Repositories
 {
@@ -10,25 +12,32 @@ namespace Fgj.Cqrs.SqlServer.Repositories
 
         public int Add(UserAddCommand request)
         {
-            const string sql = "INSERT INTO FgjCqrsUser (IdProfile, Name, Email) VALUES (@IdProfile, @Name, @Email) SELECT @@IDENTITY";
+            const string sql = "" +
+                " INSERT INTO " +
+                " FgjCqrsUser (IdProfile, Name, Email) " +
+                "      VALUES (@IdProfile, @Name, @Email) " +
+                " SELECT @@IDENTITY";
+
             return _unitOfWork.Connection.ExecuteScalar<int>(sql, request, _unitOfWork.Transaction);
         }
 
-        //public IEnumerable<ComunicadoListarResponseQuery> Listar()
-        //{
-        //    string sql = @"SELECT Comunicado.Id
-        //                        , Comunicado.CreateDate AS Data
-        //                        , Comunicado.Title AS Titulo
-        //                        , Comunicado.Description AS Descricao
-        //                     , Grupo.Description AS Grupo
-        //                   FROM CrmComunication AS Comunicado(nolock)
-        //                   INNER JOIN CrmGroup AS Grupo on Comunicado.GroupId = Grupo.Id
-        //                   WHERE Comunicado.SchoolId = 1";
+        public UserGetResponseQuery Get(UserGetRequestQuery request)
+        {
+            const string sql = "" +
+                " SELECT Id, IdProfile, Name, Email " +
+                " FROM FgjCqrsUser " +
+                " WHERE (Id = @Id OR @Id = 0) AND (Name = @Name OR @Name = '')";
 
-        //    using var connection = _unitOfWork.Connection;
-        //    IEnumerable<ComunicadoListarResponseQuery> response = connection.Query<ComunicadoListarResponseQuery>(sql);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, request, _unitOfWork.Transaction);
+        }
 
-        //    return response;
-        //}
+        public IEnumerable<UserGetAllResponseQuery> GetAll()
+        {
+            const string sql = "" +
+                " SELECT Id, IdProfile, Name, Email " +
+                " FROM FgjCqrsUser ";
+
+            return _unitOfWork.Connection.Query<UserGetAllResponseQuery>(sql, _unitOfWork.Transaction);
+        }
     }
 }

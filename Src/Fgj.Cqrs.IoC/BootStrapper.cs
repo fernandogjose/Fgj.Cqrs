@@ -4,6 +4,7 @@ using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Interfaces.MongoDbRepositories;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
 using Fgj.Cqrs.Domain.Pipelines;
+using Fgj.Cqrs.Domain.Validations;
 using Fgj.Cqrs.MongoDb.Helpers;
 using Fgj.Cqrs.MongoDb.Repositories;
 using Fgj.Cqrs.SqlServer.Repositories;
@@ -26,7 +27,7 @@ namespace Fgj.Cqrs.IoC
 
             // Sql Server Repository
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IDbConnection>(x => new SqlConnection(Environment.GetEnvironmentVariable("FGJ-CQRS-SQL-CONNECTION")));
+            services.AddTransient<IDbConnection>(_ => new SqlConnection(Environment.GetEnvironmentVariable("FGJ-CQRS-SQL-CONNECTION")));
             services.AddTransient<IUserSqlServerRepository, UserSqlServerRepository>();
             services.AddTransient<IProfileSqlServerRepository, ProfileSqlServerRepository>();
 
@@ -39,6 +40,9 @@ namespace Fgj.Cqrs.IoC
             services.AddMediatR(typeof(RequestResponseAddCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(UserAddCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ProfileAddCommand).GetTypeInfo().Assembly);
+
+            // Validations
+            services.AddTransient<UserValidation>();
         }
     }
 }

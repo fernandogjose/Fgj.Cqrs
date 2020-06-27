@@ -24,7 +24,8 @@ namespace Fgj.Cqrs.MongoDb.Repositories
                     { "Data", request.DateTime.ToString("dd/MM/yyyy HH:mm") },
                     { "Request", request.Request },
                     { "Response", request.Response },
-                    { "EndPoint", request.EndPoint }
+                    { "EndPoint", request.EndPoint },
+                    { "Method", request.Method }
                 }
             );
 
