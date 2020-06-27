@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fgj.Cqrs.SqlServer", "Src\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fgj.Cqrs.IoC", "Src\Fgj.Cqrs.IoC\Fgj.Cqrs.IoC.csproj", "{4E67C755-CC42-44B9-BDBA-D3F0B7AE69BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fgj.Cqrs.MongoDb", "Src\Fgj.Cqrs.MongoDb\Fgj.Cqrs.MongoDb.csproj", "{C8B7FDC1-B801-449E-8896-9043F604F419}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4E67C755-CC42-44B9-BDBA-D3F0B7AE69BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E67C755-CC42-44B9-BDBA-D3F0B7AE69BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E67C755-CC42-44B9-BDBA-D3F0B7AE69BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B7FDC1-B801-449E-8896-9043F604F419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B7FDC1-B801-449E-8896-9043F604F419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B7FDC1-B801-449E-8896-9043F604F419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B7FDC1-B801-449E-8896-9043F604F419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{97670A93-BEF0-45C9-8F79-018F84B6CA29} = {C654D731-83ED-46AE-9D52-FA497B0B74C2}
 		{5AABB35B-23A9-4D92-9DB9-F5B5B798E1CC} = {F69A7FDC-3662-41E5-82AC-6CAEFF0B8273}
 		{4E67C755-CC42-44B9-BDBA-D3F0B7AE69BA} = {97670A93-BEF0-45C9-8F79-018F84B6CA29}
+		{C8B7FDC1-B801-449E-8896-9043F604F419} = {F69A7FDC-3662-41E5-82AC-6CAEFF0B8273}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE4597E7-9FCA-4892-AB60-66F2854AB0FD}

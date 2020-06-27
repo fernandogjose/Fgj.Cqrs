@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fgj.Cqrs.Application\Fgj.Cqrs.Application.csproj" />
+    <ProjectReference Include="..\Fgj.Cqrs.MongoDb\Fgj.Cqrs.MongoDb.csproj" />
+  </ItemGroup>
+
 </Project>
