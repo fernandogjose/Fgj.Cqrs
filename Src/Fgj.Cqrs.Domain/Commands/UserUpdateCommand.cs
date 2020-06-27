@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class UserAddCommand : RequestCommand, IRequest<ResponseCommand>
+    public class UserUpdateCommand : RequestCommand, IRequest<ResponseCommand>
     {
-        public int IdProfile { get; }
+        public string Guid { get; }
 
-        public string Guid { get; set; }
+        public int IdProfile { get; }
 
         public string Name { get; }
 
         public string Email { get; }
 
-        public UserAddCommand(int idProfile, string guid, string name, string email)
+        public UserUpdateCommand(string guid, int idProfile, string name, string email)
         {
-            IdProfile = idProfile;
             Guid = guid;
+            IdProfile = idProfile;
             Name = name;
             Email = email;
         }
@@ -25,14 +25,14 @@ namespace Fgj.Cqrs.Domain.Commands
         {
             Errors = new List<string>(0);
 
-            if (IdProfile <= 0)
-            {
-                Errors.Add("Profile is required");
-            }
-
             if (string.IsNullOrEmpty(Guid))
             {
                 Errors.Add("Guid is required");
+            }
+
+            if (IdProfile <= 0)
+            {
+                Errors.Add("Profile is required");
             }
 
             if (string.IsNullOrEmpty(Name))

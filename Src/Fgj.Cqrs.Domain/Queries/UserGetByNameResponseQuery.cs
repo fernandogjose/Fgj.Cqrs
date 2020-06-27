@@ -1,19 +1,19 @@
 ﻿namespace Fgj.Cqrs.Domain.Queries
 {
-    public class UserGetResponseQuery
+    public class UserGetByNameResponseQuery
     {
-        public int Id { get; }
-
         public int IdProfile { get; }
+
+        public string Guid { get; }
 
         public string Name { get; }
 
         public string Email { get; }
 
-        public UserGetResponseQuery(int id, int idProfile, string name, string email)
+        public UserGetByNameResponseQuery(int idProfile, string guid, string name, string email)
         {
-            Id = id;
             IdProfile = idProfile;
+            Guid = guid;
             Name = name;
             Email = email;
         }

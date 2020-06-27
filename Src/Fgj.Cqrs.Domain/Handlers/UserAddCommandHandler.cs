@@ -29,7 +29,7 @@ namespace Fgj.Cqrs.Domain.Handlers
             }
 
             // Validações de persistencia
-            Tuple<bool, string> validation = _userValidation.IsDuplicateName(0, request.Name);
+            Tuple<bool, string> validation = _userValidation.IsDuplicateName(request.Guid, request.Name);
             if (validation.Item1)
             {
                 request.AddError(validation.Item2);

@@ -40,7 +40,11 @@ namespace Fgj.Cqrs.IoC
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidateCommand<,>));
             services.AddMediatR(typeof(RequestResponseAddCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(UserAddCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(UserUpdateCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(UserDeleteCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ProfileAddCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(ProfileUpdateCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(ProfileDeleteCommand).GetTypeInfo().Assembly);
 
             // Validations
             services.AddTransient<IUserValidation, UserValidation>();

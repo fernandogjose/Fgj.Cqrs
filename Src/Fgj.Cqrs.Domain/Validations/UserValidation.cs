@@ -14,11 +14,10 @@ namespace Fgj.Cqrs.Domain.Validations
             _userSqlServerRepository = userSqlServerRepository;
         }
 
-        public Tuple<bool, string> IsDuplicateName(int id, string name)
+        public Tuple<bool, string> IsDuplicateName(string guid, string name)
         {
-            UserGetRequestQuery request = new UserGetRequestQuery(0, name);
-            UserGetResponseQuery response = _userSqlServerRepository.Get(request);
-            return Tuple.Create(response != null && response.Id != id, "Name already exist");
+            UserGetByNameResponseQuery response = _userSqlServerRepository.GetByName(name);
+            return Tuple.Create(response != null && response.Guid != guid, "Name already exist");
         }
     }
 }

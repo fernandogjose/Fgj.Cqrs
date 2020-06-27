@@ -1,10 +1,9 @@
 ﻿using MediatR;
-using System;
 using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class ProfileAddCommand : RequestCommand, IRequest<ResponseCommand>
+    public class ProfileUpdateCommand : RequestCommand, IRequest<ResponseCommand>
     {
         public int IdType { get; }
 
@@ -16,7 +15,7 @@ namespace Fgj.Cqrs.Domain.Commands
 
         public string Address { get; }
 
-        public ProfileAddCommand(int idType, string guid, string avatar, string cpfCnpj, string address)
+        public ProfileUpdateCommand(int idType, string guid, string avatar, string cpfCnpj, string address)
         {
             IdType = idType;
             Guid = guid;
@@ -28,6 +27,11 @@ namespace Fgj.Cqrs.Domain.Commands
         public override void Validate()
         {
             Errors = new List<string>(0);
+
+            if (string.IsNullOrEmpty(Guid))
+            {
+                Errors.Add("Guid is required");
+            }
 
             if (IdType == 0)
             {

@@ -8,7 +8,11 @@ namespace Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories
     {
         int Add(UserAddCommand request);
 
-        UserGetResponseQuery Get(UserGetRequestQuery request);
+        void Update(UserUpdateCommand request);
+
+        void Delete(UserDeleteCommand request);
+
+        UserGetByNameResponseQuery GetByName(string name);
 
         IEnumerable<UserGetAllResponseQuery> GetAll();
     }

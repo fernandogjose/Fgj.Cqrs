@@ -35,9 +35,9 @@ namespace Fgj.Cqrs.UnitTest._3_Domain.Handlers
         [Fact]
         public async Task Should_Add_User_When_All_Parameters_Success()
         {
-            UserAddCommand userAddCommand = new UserAddCommand(1, _faker.Person.FullName, _faker.Person.Email);
-            _userValidationMock.Setup(r => r.IsDuplicateName(It.IsAny<int>(), It.IsAny<string>())).Returns(Tuple.Create(false, "Name already exist"));
-            _userSqlServerRepositoryMock.Setup(r => r.Add(It.IsAny<UserAddCommand>())).Returns(_faker.Random.Number(1, 100));            
+            UserAddCommand userAddCommand = new UserAddCommand(1, Guid.NewGuid().ToString(), _faker.Person.FullName, _faker.Person.Email);
+            _userValidationMock.Setup(r => r.IsDuplicateName(It.IsAny<string>(), It.IsAny<string>())).Returns(Tuple.Create(false, "Name already exist"));
+            _userSqlServerRepositoryMock.Setup(r => r.Add(It.IsAny<UserAddCommand>())).Returns(_faker.Random.Number(1, 100));
 
             ResponseCommand response = await _userAddCommandHandler.Handle(userAddCommand, CancellationToken.None).ConfigureAwait(true);
 
@@ -48,7 +48,7 @@ namespace Fgj.Cqrs.UnitTest._3_Domain.Handlers
         [Fact]
         public async Task Should_Show_Error_When_Some_Parameters_Is_Invalid()
         {
-            UserAddCommand userAddCommand = new UserAddCommand(1, _faker.Person.FullName, _faker.Person.Email);
+            UserAddCommand userAddCommand = new UserAddCommand(1, Guid.NewGuid().ToString(), _faker.Person.FullName, _faker.Person.Email);
             userAddCommand.AddError("Meu erro para testar o UnitTest");
 
             ResponseCommand response = await _userAddCommandHandler.Handle(userAddCommand, CancellationToken.None).ConfigureAwait(true);
@@ -61,8 +61,8 @@ namespace Fgj.Cqrs.UnitTest._3_Domain.Handlers
         [Fact]
         public async Task Should_Show_Error_When_Duplicate_Name()
         {
-            UserAddCommand userAddCommand = new UserAddCommand(1, _faker.Person.FullName, _faker.Person.Email);
-            _userValidationMock.Setup(r => r.IsDuplicateName(It.IsAny<int>(), It.IsAny<string>())).Returns(Tuple.Create(true, "Name already exist"));
+            UserAddCommand userAddCommand = new UserAddCommand(1, Guid.NewGuid().ToString(), _faker.Person.FullName, _faker.Person.Email);
+            _userValidationMock.Setup(r => r.IsDuplicateName(It.IsAny<string>(), It.IsAny<string>())).Returns(Tuple.Create(true, "Name already exist"));
 
             ResponseCommand response = await _userAddCommandHandler.Handle(userAddCommand, CancellationToken.None).ConfigureAwait(true);
 

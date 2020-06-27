@@ -3,6 +3,7 @@ using Fgj.Cqrs.Application.ViewModels;
 using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,12 +28,12 @@ namespace Fgj.Cqrs.Application.AppServices
                 _unitOfWork.BeginTransaction();
 
                 // Adiciona o Perfil
-                ProfileAddCommand profileAddCommand = new ProfileAddCommand(request.IdType, request.Avatar, request.CpfCnpj, request.Address);
+                ProfileAddCommand profileAddCommand = new ProfileAddCommand(request.IdType, Guid.NewGuid().ToString(), request.Avatar, request.CpfCnpj, request.Address);
                 ResponseCommand profileAddResponse = await _mediator.Send(profileAddCommand, CancellationToken.None).ConfigureAwait(true);
                 if (!profileAddResponse.Success) return new ResponseViewModel(false, profileAddResponse.Object);
 
                 // Adiciona o Usuário
-                UserAddCommand userAddCommand = new UserAddCommand((int)profileAddResponse.Object, request.Name, request.Email);
+                UserAddCommand userAddCommand = new UserAddCommand((int)profileAddResponse.Object, Guid.NewGuid().ToString(), request.Name, request.Email);
                 ResponseCommand userAddResponse = await _mediator.Send(userAddCommand, CancellationToken.None).ConfigureAwait(true);
                 if (!userAddResponse.Success) return new ResponseViewModel(false, userAddResponse.Object);
 
