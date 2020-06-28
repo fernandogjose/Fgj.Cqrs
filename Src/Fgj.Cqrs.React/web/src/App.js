@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import avatar from './assets/avatar.png';
@@ -22,13 +22,14 @@ class App extends Component {
 
             <div className="row">
               <div className="col">
-                <h2>Full Stack - Arquiteto - Net Core - React</h2>
+                <h2>Full Stack - Net Core - React - Architecture</h2>
               </div>
             </div>
           </div>
         </header>
 
         <Switch>
+          <Route exact path={["/", "/users"]} component={UserList} />
           <Route exact path="/users" component={UserList} />
         </Switch>
       </Router>

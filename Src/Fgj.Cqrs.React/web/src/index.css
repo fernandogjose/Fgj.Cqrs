@@ -29,3 +29,7 @@ code {
 .invalid-input {
   border-color: #721c24;
 }
+
+.margin-top-10 {
+  margin-top: 10px;;
+}
