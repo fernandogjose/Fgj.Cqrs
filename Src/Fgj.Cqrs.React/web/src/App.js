@@ -10,18 +10,18 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <header class="bg-primary text-white text-center">
-          <div class="container">
-            <img class="img-fluid img-avatar" src={avatar} alt="Fernando José" />
+        <header className="bg-primary text-white text-center">
+          <div className="container">
+            <img className="img-fluid img-avatar" src={avatar} alt="Fernando José" />
 
-            <div class="row">
-              <div class="col">
+            <div className="row">
+              <div className="col">
                 <h1>Fernando José</h1>
               </div>
             </div>
 
-            <div class="row">
-              <div class="col">
+            <div className="row">
+              <div className="col">
                 <h2>Full Stack - Arquiteto - Net Core - React</h2>
               </div>
             </div>
@@ -29,7 +29,7 @@ class App extends Component {
         </header>
 
         <Switch>
-          <Route exact path={["/", "/users"]} component={UserList} />
+          <Route exact path="/users" component={UserList} />
         </Switch>
       </Router>
     );

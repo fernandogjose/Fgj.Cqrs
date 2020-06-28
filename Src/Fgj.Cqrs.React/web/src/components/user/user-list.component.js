@@ -23,11 +23,11 @@ export default class UserList extends Component {
         UserService.getAll()
             .then(response => {
                 this.setState({
-                    users: response.object
+                    users: response.data.object
                 });
             })
-            .catch(e => {
-                console.log(e.object);
+            .catch(exception => {
+                console.log(exception.message.object === undefined ? exception.message : exception.message.object);
             });
     }
 
