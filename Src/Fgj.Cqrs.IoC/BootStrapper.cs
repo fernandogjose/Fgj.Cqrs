@@ -31,10 +31,12 @@ namespace Fgj.Cqrs.IoC
             services.AddTransient<IDbConnection>(_ => new SqlConnection(Environment.GetEnvironmentVariable("FGJ-CQRS-SQL-CONNECTION")));
             services.AddTransient<IUserSqlServerRepository, UserSqlServerRepository>();
             services.AddTransient<IProfileSqlServerRepository, ProfileSqlServerRepository>();
+            services.AddTransient<ITypeSqlServerRepository, TypeSqlServerRepository>();
 
             // Application
             services.AddTransient<IRequestResponseAppService, RequestResponseAppService>();
             services.AddTransient<IUserAppService, UserAppService>();
+            services.AddTransient<ITypeAppService, TypeAppService>();
 
             // Command e Handler
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidateCommand<,>));

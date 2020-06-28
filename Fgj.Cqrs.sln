@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fgj.Cqrs.MongoDb", "Src\Fgj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Test", "5-Test", "{C25542B3-D31D-4C61-8060-6999247D2DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fgj.Cqrs.UnitTest", "Src\Fgj.Cqrs.UnitTest\Fgj.Cqrs.UnitTest.csproj", "{0EF6A6F8-B52B-4B9B-8F61-65B266957B14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fgj.Cqrs.UnitTest", "Src\Fgj.Cqrs.UnitTest\Fgj.Cqrs.UnitTest.csproj", "{0EF6A6F8-B52B-4B9B-8F61-65B266957B14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
