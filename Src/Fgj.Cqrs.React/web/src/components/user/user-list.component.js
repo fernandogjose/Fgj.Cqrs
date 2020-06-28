@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import UserService from '../../services/user.service';
 import { Link } from 'react-router-dom';
-import './user.css'
 
 export default class UserList extends Component {
     constructor(props) {

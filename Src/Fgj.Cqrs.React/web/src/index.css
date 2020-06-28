@@ -14,6 +14,13 @@ code {
     monospace;
 }
 
+.title {
+  font-size: 20;
+  color: #ffffff;
+  padding: 15px;
+  background-color: #082d54;
+}
+
 .invalid-label {
   margin-top: 5px;
   color: #721c24;
