@@ -16,7 +16,7 @@ namespace Fgj.Cqrs.MongoDb.Repositories
             _mongoDbHelper = mongoDbHelper;
         }
 
-        public async Task AddAsync(RequestResponseAddCommand request)
+        public async Task CreateAsync(RequestResponseCreateCommand request)
         {
             var collection = _mongoDbHelper.MongoDatabase.GetCollection<BsonDocument>("RequestResponse");
             var bsonDocumentRequest = new BsonDocument(

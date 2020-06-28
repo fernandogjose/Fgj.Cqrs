@@ -17,9 +17,9 @@ namespace Fgj.Cqrs.Application.AppServices
             _mediator = mediator;
         }
 
-        public async Task AddAsync(RequestResponseAddRequestViewModel request)
+        public async Task CreateAsync(RequestResponseCreateRequestViewModel request)
         {
-            RequestResponseAddCommand command = new RequestResponseAddCommand(DateTime.Now, request.Request, request.Response, request.EndPoint, request.Method);
+            RequestResponseCreateCommand command = new RequestResponseCreateCommand(DateTime.Now, request.Request, request.Response, request.EndPoint, request.Method);
             await _mediator.Send(command, CancellationToken.None).ConfigureAwait(false);
         }
     }

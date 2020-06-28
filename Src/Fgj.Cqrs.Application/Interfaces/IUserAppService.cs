@@ -5,7 +5,7 @@ namespace Fgj.Cqrs.Application.Interfaces
 {
     public interface IUserAppService
     {
-        Task<ResponseViewModel> AddAsync(UserAddRequestViewModel request);
+        Task<ResponseViewModel> CreateAsync(UserCreateRequestViewModel request);
 
         Task<ResponseViewModel> UpdateAsync(UserUpdateRequestViewModel request);
 

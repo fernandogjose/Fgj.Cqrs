@@ -2,7 +2,7 @@
 
 namespace Fgj.Cqrs.Application.ViewModels
 {
-    public class RequestResponseAddRequestViewModel
+    public class RequestResponseCreateRequestViewModel
     {
         public DateTime DateTime { get; }
 
@@ -14,7 +14,7 @@ namespace Fgj.Cqrs.Application.ViewModels
 
         public string Method { get; }
 
-        public RequestResponseAddRequestViewModel(DateTime dataTime, string request, string response, string endpoint, string method)
+        public RequestResponseCreateRequestViewModel(DateTime dataTime, string request, string response, string endpoint, string method)
         {
             DateTime = dataTime;
             Request = request;

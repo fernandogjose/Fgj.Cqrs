@@ -92,8 +92,8 @@ namespace Fgj.Cqrs.Api.Middlewares
         {
             try
             {
-                RequestResponseAddRequestViewModel request = new RequestResponseAddRequestViewModel(DateTime.Now, Request, Response, EndPoint, Method);
-                await _requestResponseAppService.AddAsync(request).ConfigureAwait(false);
+                RequestResponseCreateRequestViewModel request = new RequestResponseCreateRequestViewModel(DateTime.Now, Request, Response, EndPoint, Method);
+                await _requestResponseAppService.CreateAsync(request).ConfigureAwait(false);
             }
             catch { }
         }

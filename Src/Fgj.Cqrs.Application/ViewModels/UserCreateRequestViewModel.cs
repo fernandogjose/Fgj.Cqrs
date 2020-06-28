@@ -1,6 +1,6 @@
 ﻿namespace Fgj.Cqrs.Application.ViewModels
 {
-    public class UserAddRequestViewModel
+    public class UserCreateRequestViewModel
     {
         public int IdType { get; set; }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class RequestResponseAddCommand : IRequest<ResponseCommand>
+    public class RequestResponseCreateCommand : IRequest<ResponseCommand>
     {
         public DateTime DateTime { get; }
 
@@ -16,7 +16,7 @@ namespace Fgj.Cqrs.Domain.Commands
 
         public string Method { get; }
 
-        public RequestResponseAddCommand(DateTime dataTime, string request, string response, string endPoint, string method)
+        public RequestResponseCreateCommand(DateTime dataTime, string request, string response, string endPoint, string method)
         {
             DateTime = dataTime;
             Request = request;

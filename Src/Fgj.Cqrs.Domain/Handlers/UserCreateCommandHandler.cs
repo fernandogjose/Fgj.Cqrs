@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace Fgj.Cqrs.Domain.Handlers
 {
-    public class UserAddCommandHandler : IRequestHandler<UserAddCommand, ResponseCommand>
+    public class UserCreateCommandHandler : IRequestHandler<UserCreateCommand, ResponseCommand>
     {
         private readonly IUserSqlServerRepository _userSqlServerRepository;
         private readonly IUserValidation _userValidation;
 
-        public UserAddCommandHandler(IUserSqlServerRepository userSqlServerRepository, IUserValidation userValidation)
+        public UserCreateCommandHandler(IUserSqlServerRepository userSqlServerRepository, IUserValidation userValidation)
         {
             _userSqlServerRepository = userSqlServerRepository;
             _userValidation = userValidation;
         }
 
-        public Task<ResponseCommand> Handle(UserAddCommand request, CancellationToken cancellationToken)
+        public Task<ResponseCommand> Handle(UserCreateCommand request, CancellationToken cancellationToken)
         {
             // Validações de dados
             if (!request.IsValid())
@@ -37,7 +37,7 @@ namespace Fgj.Cqrs.Domain.Handlers
             }
 
             // Persistir
-            int userId = _userSqlServerRepository.Add(request);
+            int userId = _userSqlServerRepository.Create(request);
 
             // Response
             return Task.FromResult(new ResponseCommand(true, userId));

@@ -4,7 +4,7 @@ namespace Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories
 {
     public interface IProfileSqlServerRepository
     {
-        int Add(ProfileAddCommand request);
+        int Create(ProfileCreateCommand request);
 
         void Update(ProfileUpdateCommand request);
 

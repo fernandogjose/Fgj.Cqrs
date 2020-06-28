@@ -5,6 +5,6 @@ namespace Fgj.Cqrs.Application.Interfaces
 {
     public interface IRequestResponseAppService
     {
-        Task AddAsync(RequestResponseAddRequestViewModel request);
+        Task CreateAsync(RequestResponseCreateRequestViewModel request);
     }
 }

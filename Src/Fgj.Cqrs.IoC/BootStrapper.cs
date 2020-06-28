@@ -40,11 +40,11 @@ namespace Fgj.Cqrs.IoC
 
             // Command e Handler
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidateCommand<,>));
-            services.AddMediatR(typeof(RequestResponseAddCommand).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(UserAddCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(RequestResponseCreateCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(UserCreateCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(UserUpdateCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(UserDeleteCommand).GetTypeInfo().Assembly);
-            services.AddMediatR(typeof(ProfileAddCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(ProfileCreateCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ProfileUpdateCommand).GetTypeInfo().Assembly);
             services.AddMediatR(typeof(ProfileDeleteCommand).GetTypeInfo().Assembly);
 

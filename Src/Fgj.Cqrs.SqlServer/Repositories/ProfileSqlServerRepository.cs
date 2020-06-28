@@ -8,7 +8,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
     {
         public ProfileSqlServerRepository(IUnitOfWork unitOfWork) : base(unitOfWork) { }
 
-        public int Add(ProfileAddCommand request)
+        public int Create(ProfileCreateCommand request)
         {
             const string sql = "" +
                 " INSERT INTO " +

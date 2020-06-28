@@ -21,9 +21,9 @@ namespace Fgj.Cqrs.Api.Controllers
         [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Post([FromBody] UserAddRequestViewModel request)
+        public async Task<IActionResult> Post([FromBody] UserCreateRequestViewModel request)
         {
-            ResponseViewModel response = await _userAppService.AddAsync(request).ConfigureAwait(true);
+            ResponseViewModel response = await _userAppService.CreateAsync(request).ConfigureAwait(true);
             return Ok(response);
         }
 

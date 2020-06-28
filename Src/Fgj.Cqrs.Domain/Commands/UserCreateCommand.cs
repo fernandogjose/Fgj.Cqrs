@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class UserAddCommand : RequestCommand, IRequest<ResponseCommand>
+    public class UserCreateCommand : RequestCommand, IRequest<ResponseCommand>
     {
         public int IdProfile { get; }
 
@@ -13,7 +13,7 @@ namespace Fgj.Cqrs.Domain.Commands
 
         public string Email { get; }
 
-        public UserAddCommand(int idProfile, string guid, string name, string email)
+        public UserCreateCommand(int idProfile, string guid, string name, string email)
         {
             IdProfile = idProfile;
             Guid = guid;

@@ -10,7 +10,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
     {
         public UserSqlServerRepository(IUnitOfWork unitOfWork) : base(unitOfWork) { }
 
-        public int Add(UserAddCommand request)
+        public int Create(UserCreateCommand request)
         {
             const string sql = "" +
                 " INSERT INTO " +
@@ -18,7 +18,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
                 "      VALUES (@Guid, @IdProfile, @Name, @Email) " +
                 " SELECT @@IDENTITY";
 
-            return _unitOfWork.Connection.ExecuteScalar<int>(sql, request, _unitOfWork.Transaction);
+            return _unitOfWork.Connection.ExecuteScalar<int>(sql, request, _unitOfWork?.Transaction);
         }
 
         public void Update(UserUpdateCommand request)
@@ -29,7 +29,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
                 "   , Email = @Email" +
                 " WHERE Guid = @Guid";
 
-            _unitOfWork.Connection.Execute(sql, request, _unitOfWork.Transaction);
+            _unitOfWork.Connection.Execute(sql, request, _unitOfWork?.Transaction);
         }
 
         public void Delete(UserDeleteCommand request)
@@ -38,7 +38,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
                 " DELETE FgjCqrsUser " +
                 " WHERE Guid = @Guid";
 
-            _unitOfWork.Connection.Execute(sql, request, _unitOfWork.Transaction);
+            _unitOfWork.Connection.Execute(sql, request, _unitOfWork?.Transaction);
         }
 
         public IEnumerable<UserGetAllResponseQuery> GetAll()
@@ -51,7 +51,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
                 " INNER JOIN FgjCqrsProfile ON FgjCqrsUser.IdProfile = FgjCqrsProfile.Id" +
                 " INNER JOIN FgjCqrsType ON FgjCqrsProfile.IdType = FgjCqrsType.Id";
 
-            return _unitOfWork.Connection.Query<UserGetAllResponseQuery>(sql, _unitOfWork.Transaction);
+            return _unitOfWork.Connection.Query<UserGetAllResponseQuery>(sql, _unitOfWork?.Transaction);
         }
 
         public UserGetResponseQuery GetByName(string request)
@@ -61,7 +61,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
                 " FROM FgjCqrsUser " +
                 " WHERE Name = @Name";
 
-            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Name = request }, _unitOfWork.Transaction);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Name = request }, _unitOfWork?.Transaction);
         }
 
         public UserGetResponseQuery GetByGuid(string request)
@@ -71,7 +71,7 @@ namespace Fgj.Cqrs.SqlServer.Repositories
                 " FROM FgjCqrsUser " +
                 " WHERE Guid = @Guid";
 
-            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Guid = request }, _unitOfWork.Transaction);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Guid = request }, _unitOfWork?.Transaction);
         }
     }
 }

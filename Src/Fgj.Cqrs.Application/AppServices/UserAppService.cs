@@ -24,7 +24,7 @@ namespace Fgj.Cqrs.Application.AppServices
             _userSqlServerRepository = userSqlServerRepository;
         }
 
-        public async Task<ResponseViewModel> AddAsync(UserAddRequestViewModel request)
+        public async Task<ResponseViewModel> CreateAsync(UserCreateRequestViewModel request)
         {
             using (_unitOfWork)
             {
@@ -32,14 +32,14 @@ namespace Fgj.Cqrs.Application.AppServices
                 _unitOfWork.BeginTransaction();
 
                 // Adiciona o Perfil
-                ProfileAddCommand profileAddCommand = new ProfileAddCommand(request.IdType, Guid.NewGuid().ToString(), request.Avatar, request.CpfCnpj, request.Address);
-                ResponseCommand profileAddResponse = await _mediator.Send(profileAddCommand, CancellationToken.None).ConfigureAwait(true);
-                if (!profileAddResponse.Success) return new ResponseViewModel(false, profileAddResponse.Object);
+                ProfileCreateCommand profileCreateCommand = new ProfileCreateCommand(request.IdType, Guid.NewGuid().ToString(), request.Avatar, request.CpfCnpj, request.Address);
+                ResponseCommand profileCreateResponse = await _mediator.Send(profileCreateCommand, CancellationToken.None).ConfigureAwait(true);
+                if (!profileCreateResponse.Success) return new ResponseViewModel(false, profileCreateResponse.Object);
 
                 // Adiciona o Usuário
-                UserAddCommand userAddCommand = new UserAddCommand((int)profileAddResponse.Object, Guid.NewGuid().ToString(), request.Name, request.Email);
-                ResponseCommand userAddResponse = await _mediator.Send(userAddCommand, CancellationToken.None).ConfigureAwait(true);
-                if (!userAddResponse.Success) return new ResponseViewModel(false, userAddResponse.Object);
+                UserCreateCommand userCreateCommand = new UserCreateCommand((int)profileCreateResponse.Object, Guid.NewGuid().ToString(), request.Name, request.Email);
+                ResponseCommand userCreateResponse = await _mediator.Send(userCreateCommand, CancellationToken.None).ConfigureAwait(true);
+                if (!userCreateResponse.Success) return new ResponseViewModel(false, userCreateResponse.Object);
 
                 // Comita e Retorna
                 _unitOfWork.CommitTransaction();

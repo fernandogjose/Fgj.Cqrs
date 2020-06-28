@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Fgj.Cqrs.Domain.Handlers
 {
-    public class ProfileAddCommandHandler : IRequestHandler<ProfileAddCommand, ResponseCommand>
+    public class ProfileCreateCommandHandler : IRequestHandler<ProfileCreateCommand, ResponseCommand>
     {
         private readonly IProfileSqlServerRepository _profileSqlServerRepository;
 
-        public ProfileAddCommandHandler(IProfileSqlServerRepository profileSqlServerRepository)
+        public ProfileCreateCommandHandler(IProfileSqlServerRepository profileSqlServerRepository)
         {
             _profileSqlServerRepository = profileSqlServerRepository;
         }
 
-        public Task<ResponseCommand> Handle(ProfileAddCommand request, CancellationToken cancellationToken)
+        public Task<ResponseCommand> Handle(ProfileCreateCommand request, CancellationToken cancellationToken)
         {
             // Validações
             if (!request.IsValid())
@@ -24,7 +24,7 @@ namespace Fgj.Cqrs.Domain.Handlers
             }
 
             // Persistir
-            int profileId = _profileSqlServerRepository.Add(request);
+            int profileId = _profileSqlServerRepository.Create(request);
 
             // Response
             return Task.FromResult(new ResponseCommand(true, profileId));

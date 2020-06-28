@@ -5,6 +5,6 @@ namespace Fgj.Cqrs.Domain.Interfaces.MongoDbRepositories
 {
     public interface IRequestResponseMongoDbRepository
     {
-        Task AddAsync(RequestResponseAddCommand request);
+        Task CreateAsync(RequestResponseCreateCommand request);
     }
 }

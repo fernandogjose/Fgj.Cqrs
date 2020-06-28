@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class ProfileAddCommand : RequestCommand, IRequest<ResponseCommand>
+    public class ProfileCreateCommand : RequestCommand, IRequest<ResponseCommand>
     {
         public int IdType { get; }
 
@@ -16,7 +16,7 @@ namespace Fgj.Cqrs.Domain.Commands
 
         public string Address { get; }
 
-        public ProfileAddCommand(int idType, string guid, string avatar, string cpfCnpj, string address)
+        public ProfileCreateCommand(int idType, string guid, string avatar, string cpfCnpj, string address)
         {
             IdType = idType;
             Guid = guid;
