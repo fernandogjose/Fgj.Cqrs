@@ -14,11 +14,11 @@ code {
     monospace;
 }
 
-.campo-invalido {
+.invalid-label {
   margin-top: 5px;
   color: #721c24;
 }
 
-.campo-invalido-input {
+.invalid-input {
   border-color: #721c24;
 }
