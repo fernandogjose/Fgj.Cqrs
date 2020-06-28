@@ -2,11 +2,11 @@
 {
     public class UserUpdateRequestViewModel
     {
-        public int GuidUser { get; set; }
-
-        public int GuidProfile { get; set; }
-
         public int IdType { get; set; }
+
+        public string GuidUser { get; set; }
+
+        public string GuidProfile { get; set; }
 
         public string Name { get; set; }
 

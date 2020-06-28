@@ -41,23 +41,37 @@ namespace Fgj.Cqrs.SqlServer.Repositories
             _unitOfWork.Connection.Execute(sql, request, _unitOfWork.Transaction);
         }
 
-        public UserGetByNameResponseQuery GetByName(string name)
+        public IEnumerable<UserGetAllResponseQuery> GetAll()
+        {
+            const string sql = "" +
+                " SELECT FgjCqrsUser.IdProfile, FgjCqrsUser.Guid as GuidUser, FgjCqrsUser.Name, FgjCqrsUser.Email, " +
+                "        FgjCqrsProfile.Guid as GuidProfile, FgjCqrsProfile.Avatar, FgjCqrsProfile.CpfCnpj, FgjCqrsProfile.Address," +
+                "        FgjCqrsType.Description as Type" +
+                " FROM FgjCqrsUser " +
+                " INNER JOIN FgjCqrsProfile ON FgjCqrsUser.IdProfile = FgjCqrsProfile.Id" +
+                " INNER JOIN FgjCqrsType ON FgjCqrsProfile.IdType = FgjCqrsType.Id";
+
+            return _unitOfWork.Connection.Query<UserGetAllResponseQuery>(sql, _unitOfWork.Transaction);
+        }
+
+        public UserGetResponseQuery GetByName(string request)
         {
             const string sql = "" +
                 " SELECT IdProfile, Guid, Name, Email " +
                 " FROM FgjCqrsUser " +
                 " WHERE Name = @Name";
 
-            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetByNameResponseQuery>(sql, new { Name = name }, _unitOfWork.Transaction);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Name = request }, _unitOfWork.Transaction);
         }
 
-        public IEnumerable<UserGetAllResponseQuery> GetAll()
+        public UserGetResponseQuery GetByGuid(string request)
         {
             const string sql = "" +
                 " SELECT IdProfile, Guid, Name, Email " +
-                " FROM FgjCqrsUser ";
+                " FROM FgjCqrsUser " +
+                " WHERE Guid = @Guid";
 
-            return _unitOfWork.Connection.Query<UserGetAllResponseQuery>(sql, _unitOfWork.Transaction);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Guid = request }, _unitOfWork.Transaction);
         }
     }
 }

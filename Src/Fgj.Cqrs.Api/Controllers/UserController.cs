@@ -21,9 +21,49 @@ namespace Fgj.Cqrs.Api.Controllers
         [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.BadRequest)]
         [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.InternalServerError)]
-        public async Task<IActionResult> Post([FromBody]UserAddRequestViewModel request)
+        public async Task<IActionResult> Post([FromBody] UserAddRequestViewModel request)
         {
             ResponseViewModel response = await _userAppService.AddAsync(request).ConfigureAwait(true);
+            return Ok(response);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> Put([FromBody] UserUpdateRequestViewModel request)
+        {
+            ResponseViewModel response = await _userAppService.UpdateAsync(request).ConfigureAwait(true);
+            return Ok(response);
+        }
+
+        [HttpDelete("{guidUser}/{guidProfile}")]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> Delete(string guidUser, string guidProfile)
+        {
+            ResponseViewModel response = await _userAppService.DeleteAsync(guidUser, guidProfile).ConfigureAwait(true);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.InternalServerError)]
+        public IActionResult GetAll()
+        {
+            ResponseViewModel response = _userAppService.GetAll();
+            return Ok(response);
+        }
+
+        [HttpGet("{guid}")]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(ResponseViewModel), (int)HttpStatusCode.InternalServerError)]
+        public IActionResult GetByGuid(string guid)
+        {
+            ResponseViewModel response = _userAppService.GetByGuid(guid);
             return Ok(response);
         }
     }

@@ -12,8 +12,10 @@ namespace Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories
 
         void Delete(UserDeleteCommand request);
 
-        UserGetByNameResponseQuery GetByName(string name);
-
         IEnumerable<UserGetAllResponseQuery> GetAll();
+
+        UserGetResponseQuery GetByName(string request);
+
+        UserGetResponseQuery GetByGuid(string request);
     }
 }

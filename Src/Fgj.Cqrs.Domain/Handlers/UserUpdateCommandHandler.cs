@@ -1,6 +1,8 @@
 ﻿using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
+using Fgj.Cqrs.Domain.Interfaces.Validations;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,10 +11,12 @@ namespace Fgj.Cqrs.Domain.Handlers
     public class UserUpdateCommandHandler : IRequestHandler<UserUpdateCommand, ResponseCommand>
     {
         private readonly IUserSqlServerRepository _userSqlServerRepository;
+        private readonly IUserValidation _userValidation;
 
-        public UserUpdateCommandHandler(IUserSqlServerRepository userSqlServerRepository)
+        public UserUpdateCommandHandler(IUserSqlServerRepository userSqlServerRepository, IUserValidation userValidation)
         {
             _userSqlServerRepository = userSqlServerRepository;
+            _userValidation = userValidation;
         }
 
         public Task<ResponseCommand> Handle(UserUpdateCommand request, CancellationToken cancellationToken)
@@ -20,6 +24,14 @@ namespace Fgj.Cqrs.Domain.Handlers
             // Validações de dados
             if (!request.IsValid())
             {
+                return Task.FromResult(new ResponseCommand(false, request.Errors));
+            }
+
+            // Validações de persistencia
+            Tuple<bool, string> validation = _userValidation.IsDuplicateName(request.Guid, request.Name);
+            if (validation.Item1)
+            {
+                request.AddError(validation.Item2);
                 return Task.FromResult(new ResponseCommand(false, request.Errors));
             }
 
