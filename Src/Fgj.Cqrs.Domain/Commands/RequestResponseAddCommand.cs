@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Fgj.Cqrs.Domain.Commands
 {
-    public class RequestResponseAddCommand : RequestCommand, IRequest<ResponseCommand>
+    public class RequestResponseAddCommand : IRequest<ResponseCommand>
     {
         public DateTime DateTime { get; }
 
@@ -23,31 +23,6 @@ namespace Fgj.Cqrs.Domain.Commands
             Response = response;
             EndPoint = endPoint;
             Method = method;
-        }
-
-        public override void Validate()
-        {
-            Errors = new List<string>(0);
-
-            if (string.IsNullOrEmpty(Request))
-            {
-                Errors.Add("Request is required");
-            }
-
-            if (string.IsNullOrEmpty(Response))
-            {
-                Errors.Add("Response is required");
-            }
-
-            if (string.IsNullOrEmpty(EndPoint))
-            {
-                Errors.Add("EndPoint is required");
-            }
-
-            if (string.IsNullOrEmpty(Method))
-            {
-                Errors.Add("Method is required");
-            }
         }
     }
 }

@@ -17,12 +17,6 @@ namespace Fgj.Cqrs.Domain.Handlers
 
         public Task<ResponseCommand> Handle(RequestResponseAddCommand request, CancellationToken cancellationToken)
         {
-            // Validações
-            if (!request.IsValid())
-            {
-                return Task.FromResult(new ResponseCommand(false, request.Errors));
-            }
-
             // Persistir no mongo
             _requestResponseMongoDbRepository.AddAsync(request);
 
