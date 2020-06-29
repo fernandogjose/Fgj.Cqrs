@@ -2,7 +2,7 @@
 {
     public class UserGetByGuidResponseQuery
     {
-        public int IdType { get; }
+        public string IdType { get; }
 
         public string Avatar { get; set; }
 
@@ -20,7 +20,7 @@
 
         public UserGetByGuidResponseQuery(string guidUser, string name, string email, string guidProfile, string avatar, string cpfCnpj, string address, int idType)
         {
-            IdType = idType;
+            IdType = idType.ToString();
             Avatar = avatar;
             CpfCnpj = cpfCnpj;
             Address = address;
