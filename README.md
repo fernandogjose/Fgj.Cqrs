@@ -58,6 +58,7 @@ Melhorias para serem feitas
 - Criar um componente para tratar erros
 - Criar um componente para fazer upload de arquivos
 - Criar um component de modal
+- Criar um loading de tela inteira
 
 #### BackEnd
 - Separar os Commands das Queries em projetos diferentes e criar um banco de dados para cada

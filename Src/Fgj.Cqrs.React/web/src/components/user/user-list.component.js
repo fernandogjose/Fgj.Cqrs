@@ -47,13 +47,16 @@ export default class UserList extends Component {
     }
 
     delete(guidUser, guidProfile) {
+        this.setState({ loading: true });
         UserService.delete(guidUser, guidProfile)
             .then(response => {
+                alert(response.data.object);
                 this.refreshList();
             })
             .catch(exception => {
                 console.log(exception);
-                alert("Error in api")
+                alert("Error in api");
+                this.setState({ loading: false });
             });
     }
 
