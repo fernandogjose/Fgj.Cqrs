@@ -238,9 +238,9 @@ export default class UserForm extends Component {
                             {/* Salvar e Cancelar */}
                             {loading
                                 ? <button className="btn btn-success btn-sm">Saving...</button>
-                                : <button onClick={this.save} className="btn btn-success btn-sm">Save</button>
+                                : <button id="btn-save" onClick={this.save} className="btn btn-success btn-sm">Save</button>
                             }
-                            &nbsp;<Link to={"/users"} className="btn btn-warning btn-sm">Cancel</Link>
+                            &nbsp;<Link id="btn-cancel" to={"/users"} className="btn btn-warning btn-sm">Cancel</Link>
 
                             {/* Erros */}
                             {errors && errors.length > 0
