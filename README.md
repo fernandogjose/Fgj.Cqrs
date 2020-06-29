@@ -60,7 +60,7 @@ Melhorias para serem feitas
 - Criar um component de modal
 
 #### BackEnd
-- Separar os Commands das Queries em projetos diferentes e um banco de dados para cada
+- Separar os Commands das Queries em projetos diferentes e criar um banco de dados para cada
 - Publicar em um message bus quando um command for executado para o projeto da query consumir e atualizar a sua base de dados
 - Criar politica de CircuitBreaker
 - Criar HealthCheck
@@ -72,6 +72,6 @@ Melhorias para serem feitas
 - **Swagger:** https://localhost:44306/swagger
 - **WebPage:** http://localhost:3000
 
-#### Produção
-- **Swagger:** https://localhost:44306/swagger
-- **WebPage:** http://localhost:3000
+#### Homologação
+- **Swagger:** https://fgj-cqrs-backend.azurewebsites.net/swagger
+- **WebPage:** https://fgj-cqrs-front.azurewebsites.net

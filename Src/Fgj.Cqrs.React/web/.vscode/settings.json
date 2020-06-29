@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bfa170a0-175c-4fee-8d3a-2de58a2c42af/resourceGroups/fgj-cqrs/providers/Microsoft.Web/sites/fgj-cqrs-front",
+    "appService.deploySubpath": "build"
+}
