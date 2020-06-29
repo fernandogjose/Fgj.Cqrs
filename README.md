@@ -14,10 +14,12 @@ Criação de um CRUD de usuário
 - Net Core 3.1
 - DDD
 - CQRS
+- MediatR
 - API Rest
 - XUnit
 - Swagger
 - Dapper
+- UnitOfWork
 - IoC
 - Moq
 - Bogus (faker)
