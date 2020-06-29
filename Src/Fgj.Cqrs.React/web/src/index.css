@@ -33,3 +33,12 @@ code {
 .margin-top-10 {
   margin-top: 10px;;
 }
+
+.btn {
+  min-width: 60px;
+  color: #ffffff;
+}
+
+.btn-warning{
+  color: #ffffff;
+}

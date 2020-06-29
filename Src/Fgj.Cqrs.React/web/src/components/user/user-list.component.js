@@ -14,7 +14,7 @@ export default class UserList extends Component {
             loading: true,
             users: [],
             currentPage: 1,
-            usersPerPage: 2,
+            usersPerPage: 10,
         };
     }
 
@@ -31,7 +31,8 @@ export default class UserList extends Component {
                 });
             })
             .catch(exception => {
-                console.log(exception.message.object === undefined ? exception.message : exception.message.object);
+                console.log(exception);
+                alert("Error in api")
             });
     }
 
@@ -50,7 +51,8 @@ export default class UserList extends Component {
                 this.refreshList();
             })
             .catch(exception => {
-                console.log(exception.message.object === undefined ? exception.message : exception.message.object);
+                console.log(exception);
+                alert("Error in api")
             });
     }
 
@@ -71,7 +73,7 @@ export default class UserList extends Component {
 
         return (
             <div>
-                <Breadcrumb title="Users"></Breadcrumb>
+                <Breadcrumb title="User List"></Breadcrumb>
                 <UserTable loading={loading} users={currentUsers} usersPerPage={usersPerPage} usersTotal={users.length} paginate={paginate} prevPage={prevPage} nextPage={nextPage} currentPage={currentPage} userDelete={this.delete}></UserTable>
             </div>
         );

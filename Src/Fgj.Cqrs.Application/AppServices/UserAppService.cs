@@ -32,7 +32,7 @@ namespace Fgj.Cqrs.Application.AppServices
                 _unitOfWork.BeginTransaction();
 
                 // Adiciona o Perfil
-                ProfileCreateCommand profileCreateCommand = new ProfileCreateCommand(request.IdType, Guid.NewGuid().ToString(), request.Avatar, request.CpfCnpj, request.Address);
+                ProfileCreateCommand profileCreateCommand = new ProfileCreateCommand(Convert.ToInt32(request.IdType), Guid.NewGuid().ToString(), request.Avatar, request.CpfCnpj, request.Address);
                 ResponseCommand profileCreateResponse = await _mediator.Send(profileCreateCommand, CancellationToken.None).ConfigureAwait(true);
                 if (!profileCreateResponse.Success) return new ResponseViewModel(false, profileCreateResponse.Object);
 

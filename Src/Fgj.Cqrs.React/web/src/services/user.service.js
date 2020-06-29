@@ -6,11 +6,11 @@ class UserService {
     }
 
     create(data) {
-        return http.post(this.endPoint)
+        return http.post(this.endPoint, data)
     }
 
     update(data) {
-        return http.put(this.endPoint);
+        return http.put(this.endPoint, data);
     }
 
     delete(guidUser, guidProfile) {

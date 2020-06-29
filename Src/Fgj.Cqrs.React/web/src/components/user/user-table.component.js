@@ -29,7 +29,7 @@ export class UserTable extends Component {
                             <th>E-mail</th>
                             <th>Type</th>
                             <th>CpfCnpj</th>
-                            <th></th>
+                            <th><Link to={"/user-create"} className="btn btn-sm btn-success">Create</Link></th>
                         </tr>
                     </thead>
 

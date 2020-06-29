@@ -2,7 +2,7 @@
 {
     public class UserCreateRequestViewModel
     {
-        public int IdType { get; set; }
+        public string IdType { get; set; }
 
         public string Name { get; set; }
 

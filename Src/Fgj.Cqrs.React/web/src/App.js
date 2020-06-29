@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import avatar from './assets/avatar.png';
-
 import UserList from "./components/user/user-list.component";
+import UserForm from "./components/user/user-form.component";
 
 class App extends Component {
   render() {
@@ -31,6 +31,7 @@ class App extends Component {
         <Switch>
           <Route exact path={["/", "/users"]} component={UserList} />
           <Route exact path="/users" component={UserList} />
+          <Route exact path="/user-create" component={UserForm} />
         </Switch>
       </Router>
     );
