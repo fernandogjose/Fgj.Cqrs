@@ -28,6 +28,35 @@ export default class UserForm extends Component {
         };
     }
 
+    componentDidMount() {
+        if (this.props.match.params.guid !== undefined) {
+            this.getByGuid(this.props.match.params.guid);
+        }
+    }
+
+    getByGuid(guid) {
+        this.setState({ loading: true });
+        UserService.getByGuid(guid)
+            .then(response => {
+                this.setState({
+                    guidUser: response.data.object.guidUser,
+                    guidProfile: response.data.object.guidProfile,
+                    name: response.data.object.name,
+                    email: response.data.object.email,
+                    idType: response.data.object.idType,
+                    avatar: response.data.object.avatar,
+                    cpfCnpj: response.data.object.cpfCnpj,
+                    address: response.data.object.address,
+                    loading: false
+                });
+            })
+            .catch(exception => {
+                console.log(exception);
+                alert("Error in api")
+                this.setState({ loading: false });
+            });
+    }
+
     onChangeName(e) {
         this.setState({
             name: e.target.value
@@ -208,10 +237,10 @@ export default class UserForm extends Component {
 
                             {/* Salvar e Cancelar */}
                             {loading
-                                ? <button className="btn btn-success">Saving...</button>
-                                : <button onClick={this.save} className="btn btn-success">Save</button>
+                                ? <button className="btn btn-success btn-sm">Saving...</button>
+                                : <button onClick={this.save} className="btn btn-success btn-sm">Save</button>
                             }
-                            &nbsp;<Link to={"/users"} className="btn btn-warning">Cancel</Link>
+                            &nbsp;<Link to={"/users"} className="btn btn-warning btn-sm">Cancel</Link>
 
                             {/* Erros */}
                             {errors && errors.length > 0

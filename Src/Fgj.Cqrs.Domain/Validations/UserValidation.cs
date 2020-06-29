@@ -16,7 +16,7 @@ namespace Fgj.Cqrs.Domain.Validations
 
         public Tuple<bool, string> IsDuplicateName(string guid, string name)
         {
-            UserGetResponseQuery response = _userSqlServerRepository.GetByName(name);
+            UserGetByNameResponseQuery response = _userSqlServerRepository.GetByName(name);
             return Tuple.Create(response != null && response.Guid != guid, "Name already exist");
         }
     }

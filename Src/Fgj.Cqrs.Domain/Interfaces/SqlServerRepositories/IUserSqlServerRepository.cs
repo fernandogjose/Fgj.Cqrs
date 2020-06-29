@@ -14,8 +14,8 @@ namespace Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories
 
         IEnumerable<UserGetAllResponseQuery> GetAll();
 
-        UserGetResponseQuery GetByName(string request);
+        UserGetByNameResponseQuery GetByName(string request);
 
-        UserGetResponseQuery GetByGuid(string request);
+        UserGetByGuidResponseQuery GetByGuid(string request);
     }
 }

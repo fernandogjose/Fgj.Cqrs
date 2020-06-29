@@ -14,7 +14,7 @@ export default class UserList extends Component {
             loading: true,
             users: [],
             currentPage: 1,
-            usersPerPage: 10,
+            usersPerPage: 5,
         };
     }
 
@@ -33,6 +33,7 @@ export default class UserList extends Component {
             .catch(exception => {
                 console.log(exception);
                 alert("Error in api")
+                this.setState({ loading: false });
             });
     }
 

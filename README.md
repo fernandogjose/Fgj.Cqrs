@@ -57,12 +57,11 @@ Melhorias para serem feitas
 
 #### FrontEnd
 - Criar um componente para tratar erros
-- Criar um componente para fazer uplaod de arquivos
+- Criar um componente para fazer upload de arquivos
 - Criar um component de modal
 
 #### BackEnd
-- Separar os Commands das Queries em projetos diferentes
-- Criar um banco de dados para cada aplicação
+- Separar os Commands das Queries em projetos diferentes e um banco de dados para cada
 - Publicar em um message bus quando um command for executado para o projeto da query consumir e atualizar a sua base de dados
 - Criar politica de CircuitBreaker
 - Criar HealthCheck

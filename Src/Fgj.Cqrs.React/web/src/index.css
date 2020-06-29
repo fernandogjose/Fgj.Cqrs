@@ -39,6 +39,12 @@ code {
   color: #ffffff;
 }
 
-.btn-warning{
-  color: #ffffff;
+.btn-warning {
+  background-color: #e0a800 !important;
+  border-color: #d39e00 !important;
+  color: #ffffff !important;
+}
+
+.btn-warning:hover {
+  background-color: #d39e00 !important;
 }

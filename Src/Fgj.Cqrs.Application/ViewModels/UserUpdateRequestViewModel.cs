@@ -2,7 +2,7 @@
 {
     public class UserUpdateRequestViewModel
     {
-        public int IdType { get; set; }
+        public string IdType { get; set; }
 
         public string GuidUser { get; set; }
 

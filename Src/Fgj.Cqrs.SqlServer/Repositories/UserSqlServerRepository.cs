@@ -54,24 +54,26 @@ namespace Fgj.Cqrs.SqlServer.Repositories
             return _unitOfWork.Connection.Query<UserGetAllResponseQuery>(sql, _unitOfWork?.Transaction);
         }
 
-        public UserGetResponseQuery GetByName(string request)
+        public UserGetByNameResponseQuery GetByName(string request)
         {
             const string sql = "" +
                 " SELECT IdProfile, Guid, Name, Email " +
                 " FROM FgjCqrsUser " +
                 " WHERE Name = @Name";
 
-            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Name = request }, _unitOfWork?.Transaction);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetByNameResponseQuery>(sql, new { Name = request }, _unitOfWork?.Transaction);
         }
 
-        public UserGetResponseQuery GetByGuid(string request)
+        public UserGetByGuidResponseQuery GetByGuid(string request)
         {
             const string sql = "" +
-                " SELECT IdProfile, Guid, Name, Email " +
+                " SELECT FgjCqrsUser.Guid as GuidUser, FgjCqrsUser.Name, FgjCqrsUser.Email, " +
+                "        FgjCqrsProfile.Guid as GuidProfile, FgjCqrsProfile.Avatar, FgjCqrsProfile.CpfCnpj, FgjCqrsProfile.Address, FgjCqrsProfile.IdType" +
                 " FROM FgjCqrsUser " +
-                " WHERE Guid = @Guid";
+                " INNER JOIN FgjCqrsProfile ON FgjCqrsUser.IdProfile = FgjCqrsProfile.Id" +
+                " WHERE FgjCqrsUser.Guid = @GuidUser";
 
-            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetResponseQuery>(sql, new { Guid = request }, _unitOfWork?.Transaction);
+            return _unitOfWork.Connection.QueryFirstOrDefault<UserGetByGuidResponseQuery>(sql, new { GuidUser = request }, _unitOfWork?.Transaction);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Fgj.Cqrs.Application.AppServices
                 _unitOfWork.BeginTransaction();
 
                 // Atualiza o Perfil
-                ProfileUpdateCommand profileUpdateCommand = new ProfileUpdateCommand(request.IdType, request.GuidProfile, request.Avatar, request.CpfCnpj, request.Address);
+                ProfileUpdateCommand profileUpdateCommand = new ProfileUpdateCommand(Convert.ToInt32(request.IdType), request.GuidProfile, request.Avatar, request.CpfCnpj, request.Address);
                 ResponseCommand profileUpdateResponse = await _mediator.Send(profileUpdateCommand, CancellationToken.None).ConfigureAwait(true);
                 if (!profileUpdateResponse.Success) return new ResponseViewModel(false, profileUpdateResponse.Object);
 
@@ -103,7 +103,7 @@ namespace Fgj.Cqrs.Application.AppServices
 
         public ResponseViewModel GetByGuid(string request)
         {
-            UserGetResponseQuery userGetResponseQuery = _userSqlServerRepository.GetByGuid(request);
+            UserGetByGuidResponseQuery userGetResponseQuery = _userSqlServerRepository.GetByGuid(request);
             return new ResponseViewModel(true, userGetResponseQuery);
         }
     }

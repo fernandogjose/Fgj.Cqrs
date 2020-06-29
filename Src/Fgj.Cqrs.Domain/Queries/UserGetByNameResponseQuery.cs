@@ -1,6 +1,6 @@
 ﻿namespace Fgj.Cqrs.Domain.Queries
 {
-    public class UserGetResponseQuery
+    public class UserGetByNameResponseQuery
     {
         public int IdProfile { get; }
 
@@ -10,7 +10,7 @@
 
         public string Email { get; }
 
-        public UserGetResponseQuery(int idProfile, string guid, string name, string email)
+        public UserGetByNameResponseQuery(int idProfile, string guid, string name, string email)
         {
             IdProfile = idProfile;
             Guid = guid;

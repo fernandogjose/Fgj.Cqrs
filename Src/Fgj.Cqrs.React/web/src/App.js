@@ -32,6 +32,7 @@ class App extends Component {
           <Route exact path={["/", "/users"]} component={UserList} />
           <Route exact path="/users" component={UserList} />
           <Route exact path="/user-create" component={UserForm} />
+          <Route exact path="/user-edit/:guid" component={UserForm} />
         </Switch>
       </Router>
     );
