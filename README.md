@@ -22,9 +22,8 @@ Criação de um CRUD de usuário
 - Moq
 - Bogus (faker)
 - C#
-- Middeware
--- RequestResponseMiddleware: Responsável por logar e tratar tudo que entre e sai da API
--- ExceptionMiddleware: Responsável por pegar e tratar todos os erros inesperados na aplicação
+- RequestResponseMiddleware: Responsável por logar e tratar tudo que entre e sai da API no mongoDB
+- ExceptionMiddleware: Responsável por pegar e tratar todos os erros inesperados da aplicação
 
 #### Banco de dados
 - SQL Server
@@ -70,9 +69,9 @@ Melhorias para serem feitas
 ### Ambientes
 
 #### Desenvolvimento
-- **Swagger: ** https://localhost:44306/swagger
-- **WebPage: ** http://localhost:3000
+- **Swagger:** https://localhost:44306/swagger
+- **WebPage:** http://localhost:3000
 
 #### Produção
-- **Swagger: ** https://localhost:44306/swagger
-- **WebPage: ** http://localhost:3000
+- **Swagger:** https://localhost:44306/swagger
+- **WebPage:** http://localhost:3000
