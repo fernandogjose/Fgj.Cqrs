@@ -56,6 +56,22 @@ Criação de um CRUD de usuário
 - dotnet build
 - dotnet run
 
+#### Testes de Unidade
+- Abrir Terminal
+- Acessar a pasta onde está o projeto
+- Acessar a pasta .\Src\Fgj.Cqrs.UnitTest
+- dotnet restore
+- dotnet build
+- dotnet test
+
+#### Testes Integrados
+- Abrir Terminal
+- Acessar a pasta onde está o projeto
+- Acessar a pasta .\Src\Fgj.Cqrs.Api
+- dotnet restore
+- dotnet build
+- dotnet test
+
 ### ToDo
 Melhorias para serem feitas 
 
