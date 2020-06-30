@@ -67,7 +67,7 @@ Criação de um CRUD de usuário
 #### Testes Integrados
 - Abrir Terminal
 - Acessar a pasta onde está o projeto
-- Acessar a pasta .\Src\Fgj.Cqrs.Api
+- Acessar a pasta .\Src\Fgj.Cqrs.IntegrationTest
 - dotnet restore
 - dotnet build
 - dotnet test
