@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Fgj.Cqrs.IntegrationTest.Tests
 {
-    public class UserTest
+    public class UserIntegrationTest
     {
         private UserScreen UserScreen;
 
