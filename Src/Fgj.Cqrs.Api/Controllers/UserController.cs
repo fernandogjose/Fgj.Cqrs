@@ -1,4 +1,5 @@
 ﻿using Fgj.Cqrs.Application.Interfaces;
+using Fgj.Cqrs.Application.Share.ViewModels;
 using Fgj.Cqrs.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

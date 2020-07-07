@@ -3,6 +3,7 @@ using Fgj.Cqrs.Domain.Commands;
 using Fgj.Cqrs.Domain.Handlers;
 using Fgj.Cqrs.Domain.Interfaces.SqlServerRepositories;
 using Fgj.Cqrs.Domain.Interfaces.Validations;
+using Fgj.Cqrs.Domain.Share.Commands;
 using Moq;
 using System;
 using System.Collections.Generic;

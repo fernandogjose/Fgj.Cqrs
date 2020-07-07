@@ -1,4 +1,5 @@
-﻿using Fgj.Cqrs.Application.ViewModels;
+﻿using Fgj.Cqrs.Application.Share.ViewModels;
+using Fgj.Cqrs.Application.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;

@@ -12,4 +12,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Blog\Validations\" />
+  </ItemGroup>
+
 </Project>
