@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.ObjectModel;
@@ -21,13 +22,18 @@ namespace Fgj.Cqrs.IntegrationTest.Extensions
                 : "";
         }
 
-        public static void ButtonClick(this IWebDriver webDriver, By by)
+        public static void ButtonClick(this IWebDriver webDriver, string id)
         {
-            ReadOnlyCollection<IWebElement> webElements = webDriver.FindElements(by);
+            ReadOnlyCollection<IWebElement> webElements = webDriver.FindElements(By.Id(id));
             if (webElements.Count > 0)
             {
                 webElements[0].Click();
             }
+        }
+
+        public static void AlertClickOk(this IWebDriver webDriver)
+        {
+            webDriver.SwitchTo().Alert().Accept();
         }
 
         public static void InputFill(this IWebDriver webDriver, string id, string value)

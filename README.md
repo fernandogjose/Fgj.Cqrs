@@ -16,16 +16,19 @@ Criação de um CRUD de usuário
 - CQRS
 - MediatR
 - API Rest
-- XUnit
 - Swagger
 - Dapper
 - UnitOfWork
 - IoC
-- Moq
-- Bogus (faker)
 - C#
 - RequestResponseMiddleware: Responsável por logar e tratar tudo que entre e sai da API no mongoDB
 - ExceptionMiddleware: Responsável por pegar e tratar todos os erros inesperados da aplicação
+
+#### Testes de Unidade e Testes Integrados
+- XUnit
+- Selenium
+- Moq
+- Bogus (faker)
 
 #### Banco de dados
 - SQL Server
@@ -52,6 +55,22 @@ Criação de um CRUD de usuário
 - dotnet restore
 - dotnet build
 - dotnet run
+
+#### Testes de Unidade
+- Abrir Terminal
+- Acessar a pasta onde está o projeto
+- Acessar a pasta .\Src\Fgj.Cqrs.UnitTest
+- dotnet restore
+- dotnet build
+- dotnet test
+
+#### Testes Integrados
+- Abrir Terminal
+- Acessar a pasta onde está o projeto
+- Acessar a pasta .\Src\Fgj.Cqrs.IntegrationTest
+- dotnet restore
+- dotnet build
+- dotnet test
 
 ### ToDo
 Melhorias para serem feitas 
