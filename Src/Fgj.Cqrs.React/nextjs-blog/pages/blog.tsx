@@ -1,21 +1,11 @@
-import { GetStaticProps } from "next"
-import { BlogModel } from "../models/blog.model"
-import BlogService from "../services/blog.service";
-
-interface BlogProps {
-    blogs: BlogModel[];
+function Blog({ blogs }) {
+    return <div>Next stars: {blogs}</div>
 }
 
-export default function Blog({ blogs }: BlogProps) {
-    return <div>
-        {blogs
-            ? blogs.map(x => <div>{x.date.toDateString()} | {x.title}</div>)
-            : "Nenhum registro foi encontrado"
-        }
-    </div>
+Blog.getInitialProps = async () => {
+    const res = await fetch('https://localhost:44306/api/blog');
+    const json = await res.json();
+    return { stars: json.object }
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-    const blogs = BlogService.getAll();
-    return { props: { blogs } };
-}
+export default Blog;
