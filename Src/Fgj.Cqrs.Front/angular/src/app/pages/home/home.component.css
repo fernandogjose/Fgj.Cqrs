@@ -19,3 +19,29 @@
   color: #007bff;
   text-decoration: none;
 }
+
+.card {
+  border: 0;
+}
+
+.article {
+  padding-top: 25px;
+}
+
+.blog-post .description {
+  font-size: 22px;
+}
+
+.blog-post figure {
+  text-align: center;
+}
+
+#videos {
+  margin-top: 25px;
+  padding-top: 25px;
+  background-color: #efefef;
+}
+
+#videos .card {
+  background-color: #efefef;
+}

@@ -1,0 +1,29 @@
+@media (min-width: 1700px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
+pre {
+  background: rgba(40, 41, 54, 1) !important;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  height: auto;
+  color: #e1e1e6;
+}
+
+pre>code {
+  display: block;
+  padding: 10px 15px;
+  white-space: pre-wrap;
+}
+
+code {
+  font-size: 90%;
+  margin: 0;
+  padding: 2px 5px;
+  border-radius: var(--border-radius-secondary);
+  background-color: var(--color-bg-code);
+}

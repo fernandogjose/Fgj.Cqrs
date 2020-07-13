@@ -39,10 +39,6 @@
   .avatar-img {
       display: none;
   }
-
-  .header .navbar-dark {
-    padding-left: 15px;
-  }
 }
 
 @media (min-width: 992px) {
