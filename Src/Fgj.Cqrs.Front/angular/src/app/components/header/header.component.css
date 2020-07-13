@@ -1,0 +1,53 @@
+.header {
+  background-color: #0F0E2D;
+}
+
+.header a {
+  color: #ffffff;
+}
+
+.header a:hover {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.header .navbar-brand img {
+  max-width: 200px;
+}
+
+.header .navbar-dark {
+  padding-left: 0;
+}
+
+.title {
+  padding: 15px;
+  background-color: #007bff;
+}
+
+.title img {
+  max-height: 250px;
+}
+
+.title .autor {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 800px) {
+  .avatar-img {
+      display: none;
+  }
+
+  .header .navbar-dark {
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+  }
+}
