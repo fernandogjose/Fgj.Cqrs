@@ -36,7 +36,7 @@ export default function Home() {
                   <pre><code>npm run dev</code></pre>
                   <p>Nosso site vai subir em modo de desenvolvimento na porta 3000.</p>
                   <p>Para acessar vamos abrir a url "http://localhost:3000" no browser. Pronto temos a nossa aplicação em next.js rodando!!!</p>
-                  <figure><img className="img-fluid" src="/criando-site-com-react-next/home-nextjs.PNG" alt="Criando um site com Next.js"></img></figure><br />
+                  <figure><img className="img-fluid" src="/criando-site-com-react-next/home-nextjs.png" alt="Criando um site com Next.js"></img></figure><br />
 
                   <h3>Próximos passos</h3>
                   <p>Nos próximos passos vamos melhorar e estruturar o código com a criação de componentes, arquivo de configuração e estilos.</p>
