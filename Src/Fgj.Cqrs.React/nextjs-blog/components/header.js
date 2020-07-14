@@ -33,7 +33,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-md-8 text-white">
-                                <h1 className="text-left">ReactJS, Next.js, Angular, Net Core, DDD, CQRS, Mediator, Bootstrap, API Rest, MongoDB, SQL Server, Teste Integrado com Selenium, Teste de Unidade com XUnit, Service Bus, Kafka</h1>
+                                <h1 className="text-left">ReactJS, Next.js, Angular, Net Core, DDD, CQRS, Mediator, Bootstrap, API Rest, MongoDB, SQL Server, Teste Integrado com Selenium, Teste de Unidade, Service Bus, Kafka, Vercel</h1>
                                 <p className="lead ">Bem vindo ao projeto fullstack, blog voltado para programadores sem frescura</p>
                             </div>
                             <div className="col-12 col-md-4 text-center avatar-img">
