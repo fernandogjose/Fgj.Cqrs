@@ -8,7 +8,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="row py-3">
                             <div className="col-6 col-md-2">
-                                <img src="/images/logo.png" className="img-fluid" alt="Projeto fullstack"></img>
+                                <img src="/header/logo.png" className="img-fluid" alt="Projeto fullstack"></img>
                             </div>
                             <div className="col-12 col-md-10 text-right">
                                 <nav>
@@ -31,7 +31,7 @@ class Header extends Component {
                                 <p className="lead ">Bem vindo ao projeto fullstack, blog voltado para programadores sem frescura</p>
                             </div>
                             <div className="col-12 col-md-4 text-center avatar-img">
-                                <img src="/images/avatar.png" alt="Fernando José" className="img-fluid"></img>
+                                <img src="/header/avatar.png" alt="Fernando José" className="img-fluid"></img>
                                 <p className="autor">Arquiteto | Fernando José | FullStack</p>
                             </div>
                         </div>
