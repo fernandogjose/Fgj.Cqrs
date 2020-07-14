@@ -61,7 +61,7 @@ export default function Home() {
                     <h2 className="mb-0 text-dark">Criando um site com React e Next.js</h2>
                     <div className="mb-1 text-muted">11 de julho - Criado por Fernando José</div>
                   </header>
-                  <p className="card-text mb-auto"> Introdução sobre o site que vamos desenvolver utilizando o react, nextJs (SSR), bootstrap com boas práticas na escritá do código</p>
+                  <p className="card-text mb-auto"> Introdução sobre o site que vamos desenvolver utilizando o react, nextJs (SSR), bootstrap com boas práticas na escrita do código</p>
                   <footer>
                     <a href="https://youtu.be/2q7_cuxKaiI" target="_blank">Assistir no youtube</a>
                   </footer>
