@@ -1,0 +1,21 @@
+.breadcrumb {
+  background-color: #efefef;
+  color: $primary-color;
+}
+
+.breadcrumb ul {
+  padding: 0;
+  padding-left: 15px;
+  margin: 0;
+  list-style: none;
+}
+
+.breadcrumb ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.breadcrumb ul li a:hover {
+  color: $primary-color;
+  text-decoration: none;
+}

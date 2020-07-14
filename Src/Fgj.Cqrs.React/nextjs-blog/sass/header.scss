@@ -1,0 +1,45 @@
+.header {
+  background-color: #01082a;
+}
+
+.header a {
+  color: #ffffff;
+}
+
+.header a:hover {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.header ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.header ul li {
+  display: inline;
+  margin-right: 50px;
+}
+
+.title {
+  padding: 15px;
+  background-color: $primary-color;
+}
+
+.title img {
+  max-height: 250px;
+}
+
+.title .autor {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 800px) {
+  .avatar-img {
+    display: none;
+  }
+}

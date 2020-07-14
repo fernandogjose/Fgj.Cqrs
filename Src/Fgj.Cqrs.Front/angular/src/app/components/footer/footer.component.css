@@ -4,7 +4,16 @@ footer {
   margin-top: -8px;
   color: #fff;
   vertical-align: middle;
-  padding-top: 65px;
+  padding-top: 45px;
   font-weight: 700;
   font-size: 18px;
+}
+
+footer a {
+  color: #efefef;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: none;
 }

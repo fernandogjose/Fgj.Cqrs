@@ -2,13 +2,10 @@ import HeadTag from "./headtag";
 import Header from "./header";
 import Footer from "./footer";
 
-function Layout({ children }) {
-    const { title } = this.props;
-
+function Layout({ children, title }) {
     return <div>
-        <HeadTag></HeadTag>
+        <HeadTag title={title}></HeadTag>
         <Header></Header>
-        <p>{title}</p>
         {children}
         <Footer></Footer>
     </div>
