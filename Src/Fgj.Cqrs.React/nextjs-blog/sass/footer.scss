@@ -1,0 +1,19 @@
+.footer {
+  height: 200px;
+  background-color: $primary-color;
+  margin-top: -8px;
+  color: $white-color;
+  vertical-align: middle;
+  padding-top: 45px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.footer a {
+  color: $silver-color;
+}
+
+.footer a:hover {
+  color: $white-color;
+  text-decoration: none;
+}

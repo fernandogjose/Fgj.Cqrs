@@ -1,25 +1,22 @@
 .header {
-  background-color: #01082a;
+  background-color: $secundary-color;
 }
 
 .header a {
-  color: #ffffff;
+  color: $white-color;
 }
 
 .header a:hover {
-  color: #efefef;
+  color: $silver-color;
   text-decoration: none;
 }
 
-.header ul {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
+.header .navbar-brand img {
+  max-width: 200px;
 }
 
-.header ul li {
-  display: inline;
-  margin-right: 50px;
+.header .navbar-dark {
+  padding-left: 0;
 }
 
 .title {
@@ -33,13 +30,24 @@
 
 .title .autor {
   font-size: 14px;
-  color: #fff;
+  color: $white-color;
   margin-top: 10px;
   font-weight: 500;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: $white-color;
 }
 
 @media only screen and (max-width: 800px) {
   .avatar-img {
     display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
 }

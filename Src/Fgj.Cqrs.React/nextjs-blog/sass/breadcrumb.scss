@@ -1,5 +1,5 @@
 .breadcrumb {
-  background-color: #efefef;
+  background-color: $silver-color;
   color: $primary-color;
 }
 
@@ -16,6 +16,6 @@
 }
 
 .breadcrumb ul li a:hover {
-  color: $primary-color;
+  color: $primary-dark-color;
   text-decoration: none;
 }
