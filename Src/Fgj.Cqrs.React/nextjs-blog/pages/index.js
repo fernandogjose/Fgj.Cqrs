@@ -1,4 +1,5 @@
 import Layout from '../components/layout';
+import Gist from 'super-react-gist';
 
 export default function Home() {
   return (
@@ -42,6 +43,9 @@ export default function Home() {
                   <p>Nos próximos passos vamos melhorar e estruturar o código com a criação de componentes, arquivo de configuração e estilos.</p>
                   <p>Criei dois videos sobre a criação do site com next.js explicando e melhorando o código gerado.</p>
 
+                  {/* <p>
+                    <Gist url="https://gist.github.com/fernandogjose/68ab53c08190f9bb6350023610dd035a" />
+                  </p> */}
                 </section>
               </div>
             </article>
