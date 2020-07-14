@@ -12,7 +12,7 @@ export default function Home() {
               <div className="blog-post">
                 <header>
                   <h2 className="blog-post-title">Criando um site com React e Next.js</h2>
-                  <p className="blog-post-meta">Escrito por <a href="https://github.com/fernandogjose" target="_blank">Fernando José</a>, em 11 de julho de 2020.</p>
+                  <p className="blog-post-meta">Escrito por <a href="https://github.com/fernandogjose" target="_blank" rel="noreferrer">Fernando José</a>, em 11 de julho de 2020.</p>
                 </header>
 
                 <section id="description" className="description"><br />
@@ -63,7 +63,7 @@ export default function Home() {
                   </header>
                   <p className="card-text mb-auto"> Introdução sobre o site que vamos desenvolver utilizando o react, nextJs (SSR), bootstrap com boas práticas na escrita do código</p>
                   <footer>
-                    <a href="https://youtu.be/2q7_cuxKaiI" target="_blank">Assistir no youtube</a>
+                    <a href="https://youtu.be/2q7_cuxKaiI" target="_blank" rel="noreferrer">Assistir no youtube</a>
                   </footer>
                 </div>
                 <figure>
@@ -81,7 +81,7 @@ export default function Home() {
                   </header>
                   <p className="card-text mb-auto">Nesta videoaula 100% prática a gente inicia o desenvolvimento do nosso site em react, nextJs (SSR), bootstrap com boas práticas e renderizando no servidor (SSR - Server Side Rendering) de forma fácil e transparente</p>
                   <footer>
-                    <a href="https://youtu.be/LYLNDi3KbVA" target="_blank">Assistir no youtube</a>
+                    <a href="https://youtu.be/LYLNDi3KbVA" target="_blank" rel="noreferrer">Assistir no youtube</a>
                   </footer>
                 </div>
                 <figure>
